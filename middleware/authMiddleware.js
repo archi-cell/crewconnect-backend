@@ -8,7 +8,6 @@ export const verifyToken = (req, res, next) => {
         return res.status(403).json({ msg: "No token provided" });
     }
 
-    // ✅ Extract token from "Bearer <token>"
     const token = authHeader.split(" ")[1];
 
     if (!token) {
@@ -31,3 +30,6 @@ export const isAdmin = (req, res, next) => {
     }
     next();
 };
+
+// ✅ DEFAULT EXPORT (IMPORTANT)
+export default verifyToken;
